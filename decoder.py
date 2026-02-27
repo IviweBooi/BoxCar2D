@@ -10,8 +10,13 @@ data = "eNqzf2j4tNOAgcGBoaiakXPmTPvjasenbg0Ntf/izax9Esh/8uabyaxVq+0fvj5xcwEDg/3r
 # Generate a unique ID for the car based on its data
 car_id = hashlib.md5(data.encode()).hexdigest()[:8]
 
-# Create a folder for this specific car
-output_folder = f"car_{car_id}"
+# Create a folder for all cars
+base_output_folder = "cars"
+os.makedirs(base_output_folder, exist_ok=True)
+
+# Create a specific folder for this car
+car_folder_name = f"car_{car_id}"
+output_folder = os.path.join(base_output_folder, car_folder_name)
 os.makedirs(output_folder, exist_ok=True)
 
 json_filename = os.path.join(output_folder, f"genome.json")

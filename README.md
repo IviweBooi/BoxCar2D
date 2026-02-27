@@ -36,7 +36,7 @@ This script automates the extraction and formatting of these parameters for anal
 ---
 
 ## Output and Data Management
-Upon successful execution, the script generates a dedicated directory for each vehicle, named using a unique identifier derived from the input data (e.g., `car_[ID]/`).
+Upon successful execution, the script generates a directory for each vehicle within a central `cars/` folder, named using a unique identifier derived from the input data (e.g., `cars/car_[ID]/`).
 
 Each directory contains the following outputs:
 
@@ -46,7 +46,7 @@ Each directory contains the following outputs:
 2.  **`genome.json` (Structured Data)**
     - A JSON-formatted file containing the raw decoded data. This is suitable for integration with other software tools or for further computational analysis.
 
-**Note:** The use of unique identifiers ensures that multiple car configurations can be analyzed sequentially without data loss or file overwriting.
+**Note:** The use of unique identifiers ensures that multiple car configurations can be analyzed sequentially without data loss or file overwriting. The generated `cars/` folder and its contents are excluded from version control via the `.gitignore` file.
 
 ---
 

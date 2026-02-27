@@ -1,0 +1,7 @@
+# Ignore car-specific decoded data
+cars/
+
+# Ignore Python caches and temporary files
+__pycache__/
+*.py[cod]
+*$py.class
