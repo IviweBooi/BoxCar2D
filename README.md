@@ -1,53 +1,55 @@
-# 🚗 BoxCar2D Decoder Guide
+# BoxCar2D Decoder Documentation
 
-Welcome! This tool is designed to take the "secret code" (encoded data) of a car from the BoxCar2D simulation and turn it into something a human can actually read and understand.
+This utility is designed to decode and analyze the genetic data strings (genomes) used in the BoxCar2D simulation. It converts encoded car configurations into structured, human-readable reports and machine-interoperable data formats.
 
-## 📋 What does this do?
-In BoxCar2D, every car is defined by a long string of random-looking characters (its "genome"). This genome contains all the instructions for building that specific car, including:
-- **The Body Shape**: Where each corner (vertex) of the car is located.
-- **The Wheels**: Which corners have wheels, how big they are, and how heavy they are.
-- **The Colors**: What color the car is painted.
+## Overview
+In the BoxCar2D environment, vehicle configurations are stored as encoded character strings. These strings encapsulate all physical and aesthetic parameters of a vehicle, including:
 
-This script "decodes" that string and gives you a clear report of exactly what that car looks like.
+- **Chassis Geometry**: The precise spatial coordinates (vertices) of the vehicle body.
+- **Wheel Specifications**: Attachment points, radii, and density parameters for each wheel slot.
+- **Aesthetic Parameters**: Hexadecimal color values used for vehicle rendering.
+
+This script automates the extraction and formatting of these parameters for analysis.
 
 ---
 
-## 🚀 How to use it
+## Execution Instructions
 
-### 1. Preparation
-- Make sure you have **Python** installed on your computer.
-- Ensure the file `decoder.py` is in your folder.
+### 1. Prerequisites
+- **Python Runtime**: Ensure that Python 3.x is installed on your system.
+- **File Integrity**: Verify that `decoder.py` is present in the working directory.
 
-### 2. Add your Car Data
-- Open `decoder.py` with any text editor (like Notepad, TextEdit, or VS Code).
-- Look for the line that starts with `data = "..."`.
-- Replace the long string inside the quotation marks with the code of the car you want to decode.
-- **Save the file.**
+### 2. Configuring Input Data
+- Open `decoder.py` using a text editor or Integrated Development Environment (IDE).
+- Locate the `data` variable assignment at the beginning of the script.
+- Replace the existing string with the encoded genome you wish to analyze.
+- Save the changes to the file.
 
-### 3. Run the Decoder
-- Open your **Terminal** or **Command Prompt**.
-- Navigate to this folder.
-- Type the following command and press Enter:
+### 3. Running the Script
+- Open a terminal or command prompt.
+- Navigate to the directory containing the script.
+- Execute the following command:
   ```bash
   python decoder.py
   ```
 
 ---
 
-## 📄 What happens next?
-After you run the script, it will create two new files for you automatically:
+## Output and Data Management
+Upon successful execution, the script generates a dedicated directory for each vehicle, named using a unique identifier derived from the input data (e.g., `car_[ID]/`).
 
-1.  **`car_[ID]_report.txt` (The Human-Friendly Report)**
-    - This is the best file to open if you just want to see the details.
-    - It lists the coordinates of the body, which wheels are attached where, and the car's colors in a clear list.
+Each directory contains the following outputs:
 
-2.  **`car_[ID].json` (The Machine-Readable File)**
-    - This file is used if you want to plug the data into another program or website. It's structured specifically for computers.
+1.  **`report.txt` (Analysis Report)**
+    - A formatted summary intended for human review. It details chassis coordinates, wheel attachment statuses, and calculated physical properties.
 
-**Note:** The `[ID]` in the filename is a unique code generated from the car's data. If you decode a different car, it will create a new set of files with a different ID, so you won't lose your previous work!
+2.  **`genome.json` (Structured Data)**
+    - A JSON-formatted file containing the raw decoded data. This is suitable for integration with other software tools or for further computational analysis.
+
+**Note:** The use of unique identifiers ensures that multiple car configurations can be analyzed sequentially without data loss or file overwriting.
 
 ---
 
-## ❓ Troubleshooting
-- **"Python is not recognized"**: You might need to install Python or add it to your computer's "PATH".
-- **Error in the code**: Make sure you didn't accidentally delete the quotation marks around the `data` string!
+## Troubleshooting
+- **Command Not Found**: Ensure Python is correctly added to your system's PATH environment variable.
+- **Syntax Errors**: Verify that the encoded string is properly enclosed in quotation marks and that no structural code has been inadvertently modified.
